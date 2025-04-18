@@ -5,6 +5,9 @@
 #include <functional>
 #include <QRegularExpression>
 #include "QStyle"
+#include <memory>
+#include <iostream>
+#include <mutex>
 
 /**
  * @brief 刷新qss，加上extern因为要在多个文件中引用头文件，避免多次定义
