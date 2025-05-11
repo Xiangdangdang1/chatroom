@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui network
 
 # 修改图标
 RC_ICONS = icon.ico
@@ -15,6 +15,7 @@ CONFIG += c++17
 
 SOURCES += \
     global.cpp \
+    httpmgr.cpp \
     logindialog.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -22,6 +23,7 @@ SOURCES += \
 
 HEADERS += \
     global.h \
+    httpmgr.h \
     logindialog.h \
     mainwindow.h \
     registerdialog.h \
