@@ -11,7 +11,7 @@
  * @brief      主窗口
  *
  * @author     xdd
- * @date       2025/04/02
+ * @date       2026/02/06
  * @history
  ******************************************************/
 QT_BEGIN_NAMESPACE
@@ -33,7 +33,7 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
-    LoginDialog *_login_dlg;
+    LoginDialog *_login_dlg;    //将LoginDialog加入成员变量
     RegsisterDialog *_reg_dlg;
 };
 #endif // MAINWINDOW_H

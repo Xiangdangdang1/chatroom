@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>img/ice.png</file>
         <file>style/stylesheet.qss</file>
+        <file>img/nn.jpg</file>
     </qresource>
 </RCC>

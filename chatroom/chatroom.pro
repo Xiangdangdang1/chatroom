@@ -1,7 +1,10 @@
+#QMAKE才有该文件
+
 QT       += core gui network
 
 # 修改图标
 RC_ICONS = icon.ico
+
 # 输出文件目录
 DESTDIR = ./bin
 

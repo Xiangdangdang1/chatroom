@@ -19,6 +19,7 @@ private:
     Ui::LoginDialog *ui;
 
 signals:
+    //定义用于connect的信号
     void switchRegister();
 };
 
