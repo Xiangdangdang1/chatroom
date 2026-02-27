@@ -8,18 +8,17 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     //设置父窗口
     _login_dlg = new LoginDialog(this); //登录界面初始化
-    setCentralWidget(_login_dlg);   //登录界面设置到主界面中，主界面加载LoginDialog，如果_login_dlg没有边框，自然嵌入主窗口
 
+    setCentralWidget(_login_dlg);   //登录界面设置嵌入到主界面中，主界面加载LoginDialog，如果_login_dlg没有边框，自然嵌入主窗口
 
     // 登录和注册消息链接，LoginDialog有一个信号，mainwindow收到信号之后，执行切换的操作，mainwindow的slot执行该操作，切换到注册界面
     connect(_login_dlg, &LoginDialog::switchRegister, this, &MainWindow::SlotSwitchReg);
 
-
     _reg_dlg = new RegsisterDialog(this);   //注册界面初始化
 
     //把注册、登录的窗口的边框，菜单隐藏
-    _login_dlg->setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);\
-    _reg_dlg->setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);\
+    _login_dlg->setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);
+    _reg_dlg->setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);
     _reg_dlg->hide();
 }
 

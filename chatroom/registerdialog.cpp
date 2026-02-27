@@ -7,10 +7,10 @@ RegsisterDialog::RegsisterDialog(QWidget *parent)
     , ui(new Ui::RegsisterDialog)
 {
     ui->setupUi(this);
-    // 设置密码
+    // 设置密码显示***
     ui->pass_editor->setEchoMode(QLineEdit::Password);
     ui->confirm_editor->setEchoMode(QLineEdit::Password);
-    ui->err_tip->setProperty("state", "normal");  //设置状态
+    ui->err_tip->setProperty("state", "normal");  //设置状态，对应qss
     repolish(ui->err_tip);
 }
 
@@ -19,6 +19,7 @@ RegsisterDialog::~RegsisterDialog()
     delete ui;
 }
 
+//获取验证码的click事件
 void RegsisterDialog::on_get_code_clicked()
 {
     auto email = ui->email_editor->text();

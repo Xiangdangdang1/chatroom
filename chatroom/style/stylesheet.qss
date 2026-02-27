@@ -7,6 +7,7 @@ background-color:rgb(255,255,255)
 color:black;
 }
 
+/* 设置不同状态显示不同颜色的提示 */
 #err_tip[state='normal']{
    color: green;
 }

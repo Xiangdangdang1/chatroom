@@ -51,7 +51,7 @@
             <item>
              <widget class="QLabel" name="err_tip">
               <property name="text">
-               <string>错误提示</string>
+               <string>错误提示info</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -195,7 +195,7 @@
               </size>
              </property>
              <property name="text">
-              <string>确认：</string>
+              <string>确认密码：</string>
              </property>
             </widget>
            </item>
