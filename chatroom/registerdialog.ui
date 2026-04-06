@@ -78,7 +78,7 @@
               </size>
              </property>
              <property name="text">
-              <string>用户名：</string>
+              <string>用户：</string>
              </property>
             </widget>
            </item>
@@ -195,7 +195,7 @@
               </size>
              </property>
              <property name="text">
-              <string>确认密码：</string>
+              <string>确认：</string>
              </property>
             </widget>
            </item>
