@@ -2,10 +2,7 @@
 #include "HttpConnection.h"
 
 CServer::CServer(boost::asio::io_context& ioc, unsigned short& port) //类的成员是引用类型，在初始化列表初始化
-	: _ioc(ioc), _acceptor(ioc, tcp::endpoint(tcp::v4(), port)), _socket(ioc)
-{
-
-}
+	: _ioc(ioc), _acceptor(ioc, tcp::endpoint(tcp::v4(), port)), _socket(ioc) {}
 
 //监听连接
 void CServer::Start()
@@ -32,7 +29,8 @@ void CServer::Start()
 		}
 		catch (std::exception& exp)
 		{
-
+			std::cout << "exception is " << exp.what() << std::endl;
+			self->Start();
 		}
 	});
 

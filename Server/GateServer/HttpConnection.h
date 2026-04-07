@@ -9,13 +9,13 @@ public:
 	void Start();	//监听读写事件
 
 private:
+	tcp::socket _socket;
 	//超时检测
 	void CheckDeadLine();
 	//应答
 	void WriteResponse();
 	//处理请求
-	void HandleReq();
-	tcp::socket _socket;
+	void HandleReq();	
 	beast::flat_buffer _buffer{ 8192 };	//8k大小的buffer接收数据
 	http::request<http::dynamic_body> _request;		
 	http::response<http::dynamic_body> _response;		

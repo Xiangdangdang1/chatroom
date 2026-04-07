@@ -70,6 +70,8 @@ public:
 
 
 
+
+
 **`GetInstance()`的设计**
 
 - 继承单例的子类析构要设置为`public`（改了C++11的写法好像无关了）
@@ -115,7 +117,7 @@ public:
 
 
 
-**`PostHttpReq()`的设计**
+### `PostHttpReq()`
 
 - http传输的是字节流，因此用`QByteArray data = QJsonDocument(json).toJson();`把JSON转为字节数组
 
@@ -176,8 +178,6 @@ public:
 
 
 
-## http相关理论
-
 
 
 
@@ -203,3 +203,17 @@ public:
   ```
 
   
+
+
+
+## 补充配置文件
+
+创建`config.ini`添加到客户端中
+
+```
+[GateServer]
+host=localhost
+port=8080
+```
+
+在`chatroom.pro`读取配置文件到输出目录（工作目录），之后`main`中添加代码，读取配置文件

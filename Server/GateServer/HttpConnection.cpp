@@ -56,7 +56,7 @@ void HttpConnection::HandleReq()
 	}
 
 	//处理Post请求
-	if (_request.method() == http::verb::post)	//处理get请求
+	if (_request.method() == http::verb::post)	//处理post请求
 	{
 		bool success = LogicSystem::GetInstance()->HandlePost(_request.target(), shared_from_this());
 		if (!success)
