@@ -1,5 +1,7 @@
 #include "LogicSystem.h"
-#include "HttpConnection.h"	
+#include "HttpConnection.h"
+#include "VerifygRPCClient.h"
+
 //在实际开发中出现两个类互相包含的情况，不要在头文件互相包含，要在cpp里，在LogicSystem头文件中声明HttpConnection类，在HttpConnection类中声明友元，前置声明解决户引用？
 
 void LogicSystem::RegGet(std::string url, HttpHandler handler)
@@ -56,10 +58,18 @@ LogicSystem::LogicSystem()
 			beast::ostream(connection->_response.body()) << jsonstr;
 			return true;
 		}
+
+
+
+
 		//key存在的情况
 		auto email = src_root["email"].asString();
+
+		//验证服务
+		GetVarifyRsp rsp = VerifygRPCClient::GetInstance()->GetVarifyCode(email);
+
 		std::cout << "email is " << email << std::endl;
-		root["error"] = 0;
+		root["error"] = rsp.error();
 		root["email"] = src_root["email"];
 		//http是面向字节流的，要转为字符串
 		std::string jsonstr = root.toStyledString();

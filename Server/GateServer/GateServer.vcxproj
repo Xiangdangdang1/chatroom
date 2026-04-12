@@ -77,10 +77,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>Default</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\dev\grpc\include;C:\dev\grpc\third_party\protobuf\src;C:\dev\grpc\third_party\abseil-cpp;C:\dev\grpc\third_party\address_sorting\include;C:\dev\grpc\third_party\re2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\dev\grpc\forvs\third_party\re2\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\status\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\random\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\flags\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\debugging\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\container\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\hash\Debug;C:\dev\grpc\forvs\third_party\boringssl-with-bazel\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\numeric\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\base\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\time\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\strings\Debug;C:\dev\grpc\forvs\third_party\protobuf\Debug;C:\dev\grpc\forvs\third_party\zlib\Debug;C:\dev\grpc\forvs\Debug;C:\dev\grpc\forvs\third_party\cares\cares\src\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -91,6 +94,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -103,10 +107,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>Default</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\dev\grpc\include;C:\dev\grpc\third_party\protobuf\src;C:\dev\grpc\third_party\abseil-cpp;C:\dev\grpc\third_party\address_sorting\include;C:\dev\grpc\third_party\re2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\dev\grpc\forvs\third_party\re2\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\status\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\random\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\flags\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\debugging\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\container\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\hash\Debug;C:\dev\grpc\forvs\third_party\boringssl-with-bazel\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\numeric\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\base\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\time\Debug;C:\dev\grpc\forvs\third_party\abseil-cpp\absl\strings\Debug;C:\dev\grpc\forvs\third_party\protobuf\Debug;C:\dev\grpc\forvs\third_party\zlib\Debug;C:\dev\grpc\forvs\Debug;C:\dev\grpc\forvs\third_party\cares\cares\src\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -117,6 +124,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -124,17 +132,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ConfigMgr.cpp" />
     <ClCompile Include="CServer.cpp" />
     <ClCompile Include="GateServer.cpp" />
     <ClCompile Include="HttpConnection.cpp" />
     <ClCompile Include="LogicSystem.cpp" />
+    <ClCompile Include="message.grpc.pb.cc" />
+    <ClCompile Include="message.pb.cc" />
+    <ClCompile Include="VerifygRPCClient.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConfigMgr.h" />
     <ClInclude Include="const.h" />
     <ClInclude Include="CServer.h" />
     <ClInclude Include="HttpConnection.h" />
     <ClInclude Include="LogicSystem.h" />
+    <ClInclude Include="message.grpc.pb.h" />
+    <ClInclude Include="message.pb.h" />
     <ClInclude Include="Singleton.h" />
+    <ClInclude Include="VerifygRPCClient.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.ini" />
+    <None Include="message.proto" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

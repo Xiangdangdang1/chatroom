@@ -1,9 +1,14 @@
 ﻿#include "CServer.h"
 #include <iostream>
 #include <json/json.h>
+#include "ConfigMgr.h"
 
 int main()
 {
+	ConfigMgr gCfgMgr;
+	std::string gate_port_str = gCfgMgr["GateServer"]["Port"];
+	unsigned short gate_port = atoi(gate_port_str.c_str());
+
 	try
 	{
 		unsigned short port = static_cast<unsigned short>(8080);
