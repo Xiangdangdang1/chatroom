@@ -229,6 +229,12 @@ async_write (发送响应)
 
 
 
+
+
+
+
+
+
 ## 小技巧
 
 - `std::enable_shared_from_this`，保证在异步回调函数执行期间，当前对象不会被释放

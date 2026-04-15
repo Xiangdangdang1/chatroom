@@ -14,6 +14,12 @@
 #include <boost/filesystem.hpp>	//用于跨平台的读文件
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/ini_parser.hpp>	//ini解析器
+#include "hiredis/hiredis.h"
+#include <atomic>
+#include <queue>
+#include <mutex>
+#include <condition_variable>
+
 
 
 namespace beast = boost::beast;         // from <boost/beast.hpp>
@@ -28,6 +34,3 @@ enum ErrorCodes
 	Error_Json = 1001,
 	RPCFailed = 1002
 };
-
-class ConfigMgr;
-extern ConfigMgr gCfgMgr;

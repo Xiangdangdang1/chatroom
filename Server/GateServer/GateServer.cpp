@@ -3,9 +3,10 @@
 #include <json/json.h>
 #include "ConfigMgr.h"
 
+
 int main()
 {
-	ConfigMgr gCfgMgr;
+	ConfigMgr& gCfgMgr = ConfigMgr::GetInstance();
 	std::string gate_port_str = gCfgMgr["GateServer"]["Port"];
 	unsigned short gate_port = atoi(gate_port_str.c_str());
 

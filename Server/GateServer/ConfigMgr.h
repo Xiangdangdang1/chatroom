@@ -44,7 +44,7 @@ public:
 		return _config_map[section];
 	}
 
-	ConfigMgr();
+	
 
 	ConfigMgr(const ConfigMgr& s)
 	{
@@ -58,8 +58,15 @@ public:
 		return *this;
 	}
 
+	//ConfigMgr改为单例
+	static ConfigMgr& GetInstance()
+	{
+		static ConfigMgr instance;
+		return instance;
+	}
 
 private:
+	ConfigMgr();
 	std::map<std::string, SectionInfo> _config_map;	//管理所有的section
 	
 };

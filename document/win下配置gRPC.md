@@ -100,9 +100,17 @@ C:\dev\grpc\forvs\third_party\protobuf\Debug\protoc.exe --cpp_out=. "message.pro
 
 
 
-### 创建`VerifygRPCClient`类
 
-`GateServer`通过gRPC实现邮箱验证功能
+
+### 新建`ConfigMgr`类读取配置文件
+
+单例
+
+
+
+
+
+
 
 
 

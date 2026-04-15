@@ -31,7 +31,7 @@ LogicSystem::LogicSystem()
 	});
 
 	//注册一个post请求
-	RegPost("/get_varifycode", [](std::shared_ptr<HttpConnection> connection)
+	RegPost("/get_verifycode", [](std::shared_ptr<HttpConnection> connection)
 	{
 		auto body_str = boost::beast::buffers_to_string(connection->_request.body().data());
 		std::cout << "receive body is " << body_str << std::endl;
@@ -66,7 +66,7 @@ LogicSystem::LogicSystem()
 		auto email = src_root["email"].asString();
 
 		//验证服务
-		GetVarifyRsp rsp = VerifygRPCClient::GetInstance()->GetVarifyCode(email);
+		GetVerifyRsp rsp = VerifygRPCClient::GetInstance()->GetVerifyCode(email);
 
 		std::cout << "email is " << email << std::endl;
 		root["error"] = rsp.error();

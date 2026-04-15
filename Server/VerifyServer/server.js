@@ -5,7 +5,7 @@ const const_module = require('./const');
 const { v4: uuidv4 } = require('uuid');  //引入uuid库生成唯一id
 
 
-async function GetVarifyCode(call, callback) {
+async function GetVerifyCode(call, callback) {
     console.log("email is ", call.request.email)
     try{
         uniqueId = uuidv4();
@@ -34,8 +34,8 @@ async function GetVarifyCode(call, callback) {
 }
 function main() {
     var server = new grpc.Server()  //启动grpc服务器
-    //将服务注册到服务器上，GetVarifyCode函数作为服务的实现, (key,value)形式
-    server.addService(message_proto.VarifyService.service, { GetVarifyCode: GetVarifyCode })
+    //将服务注册到服务器上，GetVerifyCode函数作为服务的实现, (key,value)形式
+    server.addService(message_proto.VerifyService.service, { GetVerifyCode: GetVerifyCode })
     server.bindAsync('0.0.0.0:50051', grpc.ServerCredentials.createInsecure(), () => {
         server.start()
         console.log('grpc server started')        

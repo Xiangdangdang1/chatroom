@@ -5,8 +5,10 @@ class HttpConnection : public std::enable_shared_from_this<HttpConnection>
 {
 public:
 	friend class LogicSystem;
-	HttpConnection(tcp::socket socket);
+	HttpConnection(boost::asio::io_context& ioc);
 	void Start();	//监听读写事件
+
+	tcp::socket& GetSocket() { return _socket; }	//因为socket不允许被拷贝，获取socket引用，供LogicSystem使用
 
 private:
 	tcp::socket _socket;
