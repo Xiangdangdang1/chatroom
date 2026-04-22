@@ -69,7 +69,28 @@ function SendMail(mailOptions_){
 
 
 
-## 不足
+## 验证码过期功能
 
-- 验证码需要时效性
-- `GateServer`http线程不安全
+在Verify文件夹用npm安装ioredis服务
+
+```shell
+npm install ioredis
+```
+
+为什么不需要封装连接池？
+
+node.js是单线程异步很强的语言，大多数时间是在等待I/O
+
+
+
+## Q&A
+
+- 关于`await`,等这个异步操作执行完再往下走
+
+  ```js
+  const value = await RedisClinet.get(key);
+  ```
+
+  1. `RedisClient.get(key)`返回一个Promise
+  2. `await`暂停函数的执行
+  3. 等Promise完成之后，把结果赋给`value`

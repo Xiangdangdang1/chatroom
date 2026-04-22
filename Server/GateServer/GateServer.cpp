@@ -2,7 +2,8 @@
 #include <iostream>
 #include <json/json.h>
 #include "ConfigMgr.h"
-
+#include "const.h"
+#include "RedisMgr.h"
 
 int main()
 {
