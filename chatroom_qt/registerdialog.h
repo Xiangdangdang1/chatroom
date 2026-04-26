@@ -23,6 +23,8 @@ private slots:
 
 
 
+    void on_confirm_btn_clicked();
+
 private:
     void showTip(QString str, bool b_ok);
     Ui::RegsisterDialog *ui;

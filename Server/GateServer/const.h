@@ -30,9 +30,21 @@ namespace net = boost::asio;            // from <boost/asio.hpp>
 using tcp = boost::asio::ip::tcp;       // from <boost/asio/ip/tcp.hpp>
 
 
+//前缀
+#define CODEPREFIX "code_"
+
 enum ErrorCodes
 {
 	Success = 0,
-	Error_Json = 1001,
-	RPCFailed = 1002
+	Error_Json = 1001,	//JSON解析错误
+	RPCFailed = 1002,	//RPC请求错误
+	VerifyExpired = 1003,	//验证码过期
+	VerifyCodeErr = 1004,	//验证码错误
+	UserExist = 1005,	//用户已存在
+	PasswdErr = 1006,	//密码错误
+	EmailNotMatch = 1007,	//邮箱不匹配
+	PasswdUpFailed = 1008,	//密码修改失败
+	PasswdInvalid = 1009,	//密码不合法
+
+
 };

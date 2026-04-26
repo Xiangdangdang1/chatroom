@@ -140,6 +140,8 @@
     <ClCompile Include="LogicSystem.cpp" />
     <ClCompile Include="message.grpc.pb.cc" />
     <ClCompile Include="message.pb.cc" />
+    <ClCompile Include="MySQLDao.cpp" />
+    <ClCompile Include="MySQLMgr.cpp" />
     <ClCompile Include="RedisMgr.cpp" />
     <ClCompile Include="VerifygRPCClient.cpp" />
   </ItemGroup>
@@ -152,6 +154,8 @@
     <ClInclude Include="LogicSystem.h" />
     <ClInclude Include="message.grpc.pb.h" />
     <ClInclude Include="message.pb.h" />
+    <ClInclude Include="MySQLDao.h" />
+    <ClInclude Include="MySQLMgr.h" />
     <ClInclude Include="RedisMgr.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="VerifygRPCClient.h" />

@@ -12,6 +12,7 @@ async function GetVerifyCode(call, callback) {
     try{
         //前缀(code_) + 邮箱地址作为key查询redis，判断是否存在
         let query_res = await redis_module.QueryRedis(const_module.code_prefix + call.request.email);
+        query_res = query_res === true ? await redis_module.GetValue(const_module.code_prefix + call.request.email) : null;
         console.log("query res is ", query_res);
         let uniqueId = query_res;
         if (query_res === null){

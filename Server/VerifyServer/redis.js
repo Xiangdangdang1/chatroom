@@ -8,6 +8,7 @@ const RedisClinet = new Redis({
     password: config_module.redis_passwd,    // Redis password
 });
 
+//出现错误
 RedisClinet.on('error', function (err) {
     console.log('Redis client error:');
     RedisClinet.quit();

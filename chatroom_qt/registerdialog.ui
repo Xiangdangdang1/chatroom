@@ -239,7 +239,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="varify_editor">
+            <widget class="QLineEdit" name="verify_editor">
              <property name="minimumSize">
               <size>
                <width>0</width>
