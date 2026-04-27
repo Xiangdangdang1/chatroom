@@ -30,10 +30,12 @@ public:
 
 public slots:
     void SlotSwitchReg();
+    void SlotSwitchLogin();
+    //void SlotSwitchReset();
 
 private:
     Ui::MainWindow *ui;
     LoginDialog *_login_dlg;    //将LoginDialog加入成员变量
-    RegsisterDialog *_reg_dlg;
+    RegisterDialog *_reg_dlg;
 };
 #endif // MAINWINDOW_H

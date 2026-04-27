@@ -3,5 +3,7 @@
         <file>img/ice.png</file>
         <file>style/stylesheet.qss</file>
         <file>img/nn.jpg</file>
+        <file>img/eye_off.png</file>
+        <file>img/eye.png</file>
     </qresource>
 </RCC>
